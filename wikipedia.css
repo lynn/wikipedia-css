@@ -1,0 +1,29 @@
+/* Center article */
+#mw-content-text { max-width: 38em; margin: auto; }
+
+/* Center page title and "Wikipedia, the free encyclopedia" text */
+#firstHeading, #siteSub { text-align: center; }
+
+/* Notes at top of page */
+div.hatnote { white-space: nowrap; }
+
+/* Floats */
+div.tright, div.floatright { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
+div.tleft { float: left; margin-right: -100%; transform: translateX(calc(-100% - 20px)); }
+
+/* Handle stack-clear-right class */
+div.stack-clear-right { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
+div.stack-clear-right div.tright { margin-left: 0; transform: none }
+
+/* infobox: treat as .tright */
+table.infobox { margin-left: -100%; transform: translateX(calc(100% + 20px)); }
+
+/* ambox ("This article has problems" etc): no margin */
+table.ambox { margin: 0; }
+
+/* Math */
+/* This doesn't quite work. Distinguishing inline from display is hard... */
+/* dl dd span.mwe-math-element:only-child { width: 100%; text-align: center; display: inline-block; } */
+
+/* Allow navboxes and main page to be wider */
+div.navbox, #mp-upper, #mp-lower, #mp-topbanner { width: 68em !important; margin-left: -15em !important; }
