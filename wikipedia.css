@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 { border-bottom: none; }
     table.ambox { margin: 0; }
     
     /* Disable some borders? */
-    .infobox, .thumbinner { border: none; background: inherit; }
+    table.infobox, div.thumbinner { border: none; background: inherit; }
 
     /* Math */
     /* This doesn't quite work. Distinguishing inline from display is hard... */
