@@ -13,10 +13,10 @@ h1, h2, h3, h4, h5, h6 { border-bottom: none; }
     }
 
     /* Center article */
-    #mw-content-text { max-width: 600px; margin: auto; }
+    #mw-content-text { max-width: 600px; margin: auto; line-height: 1.6; }
 
     /* Notes at top of page */
-    div.hatnote { white-space: nowrap; }
+    div.hatnote { font-size: 13px; width: 900px; font-style: normal; padding: 0; }
 
     /* Floats */
     div.tright, div.floatright { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
@@ -33,7 +33,14 @@ h1, h2, h3, h4, h5, h6 { border-bottom: none; }
     table.ambox { margin: 0; }
     
     /* Disable some borders? */
-    table.infobox, div.thumbinner { border: none; background: inherit; }
+    table.infobox, table.vertical-navbox, div.thumbinner { border: none !important; background: inherit !important; }
+    table.ambox { border-top: none; border-right: none; border-bottom: none; background: inherit !important; }
+    
+    /* Clean up vertical-navbox */
+    table.vertical-navbox div.mini ul { display: none; }
+    
+    #toc { box-sizing: border-box; border: none; padding: 20px 30px; width: 100%; }
+    #toc div.toctitle { text-align: start; }
 
     /* Math */
     /* This doesn't quite work. Distinguishing inline from display is hard... */
