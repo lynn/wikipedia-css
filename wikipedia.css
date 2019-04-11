@@ -1,29 +1,45 @@
-/* Center article */
-#mw-content-text { max-width: 38em; margin: auto; }
-
 /* Center page title and "Wikipedia, the free encyclopedia" text */
-#firstHeading, #siteSub { text-align: center; }
+#firstHeading, #siteSub, #contentSub { text-align: center; margin-left: auto; margin-right: auto; }
+h1, h2, h3, h4, h5, h6 { border-bottom: none; }
 
-/* Notes at top of page */
-div.hatnote { white-space: nowrap; }
+@media screen and (min-width: 1200px) {
+    /* Navigation */
+    #mw-navigation #mw-head { width: 900px; left: calc(50% - 450px + 5.5em); }
+    #left-navigation { margin-left: 150px; }
 
-/* Floats */
-div.tright, div.floatright { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
-div.tleft { float: left; margin-right: -100%; transform: translateX(calc(-100% - 20px)); }
+    /* Indicators */
+    .mw-body .mw-indicators {
+        float: none; width: 600px; height: 0; margin: auto; display: flex; justify-content: flex-end;
+    }
 
-/* Handle stack-clear-right class */
-div.stack-clear-right { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
-div.stack-clear-right div.tright { margin-left: 0; transform: none }
+    /* Center article */
+    #mw-content-text { max-width: 600px; margin: auto; }
 
-/* infobox: treat as .tright */
-table.infobox { margin-left: -100%; transform: translateX(calc(100% + 20px)); }
+    /* Notes at top of page */
+    div.hatnote { white-space: nowrap; }
 
-/* ambox ("This article has problems" etc): no margin */
-table.ambox { margin: 0; }
+    /* Floats */
+    div.tright, div.floatright { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
+    div.tleft { float: left; margin-right: -100%; transform: translateX(calc(-100% - 20px)); }
 
-/* Math */
-/* This doesn't quite work. Distinguishing inline from display is hard... */
-/* dl dd span.mwe-math-element:only-child { width: 100%; text-align: center; display: inline-block; } */
+    /* Handle stack-clear-right class */
+    div.stack-clear-right { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
+    div.stack-clear-right div.tright { margin-left: 0; transform: none }
 
-/* Allow navboxes and main page to be wider */
-div.navbox, #mp-upper, #mp-lower, #mp-topbanner { width: 68em !important; margin-left: -15em !important; }
+    /* Treat some tables as .tright */
+    table.infobox, table.vertical-navbox { margin-left: -100% !important; transform: translateX(calc(100% + 20px)); }
+
+    /* ambox ("This article has problems" etc): no margin */
+    table.ambox { margin: 0; }
+    
+    /* Disable some borders? */
+    .infobox, .thumbinner { border: none; background: inherit; }
+
+    /* Math */
+    /* This doesn't quite work. Distinguishing inline from display is hard... */
+    /* dl dd span.mwe-math-element:only-child { width: 100%; text-align: center; display: inline-block; } */
+
+    /* Allow navboxes and main page to be wider */
+    div.navbox, #mp-upper, #mp-lower, #mp-topbanner { width: 900px !important; margin-left: -150px !important; }
+    #catlinks { width: 900px; margin-left: auto; margin-right: auto; }
+}
