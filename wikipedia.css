@@ -13,7 +13,8 @@ h1, h2, h3, h4, h5, h6 { border-bottom: none; }
     }
 
     /* Center article */
-    #mw-content-text { max-width: 600px; margin: auto; line-height: 1.6; }
+    #mw-content-text { max-width: 600px; margin: auto; line-height: 1.73; }
+    .mw-body-content p { margin: 0.75em 0; }
 
     /* Notes at top of page */
     div.hatnote { font-size: 13px; width: 900px; font-style: normal; padding: 0; }
