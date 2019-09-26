@@ -2,65 +2,64 @@
 @name Wikipedia Experimental
 @namespace github.com/lynn/wikipedia-css
 @homepageURL https://github.com/lynn/wikipedia-css
-@version 1.0.1
+@version 1.0.2
 @updateURL https://raw.githubusercontent.com/lynn/wikipedia-css/master/wikipedia.user.css
 @description An experimental Wikipedia theme with figures floated into the margins.
 @author Lynn
 @license MIT
 ==/UserStyle== */
 
-@-moz-document domain("wikipedia.org") {
-    /* Center page title and "Wikipedia, the free encyclopedia" text */
-    #firstHeading, #siteSub, #contentSub { text-align: center; margin-left: auto; margin-right: auto; }
-    h1, h2, h3, h4, h5, h6 { border-bottom: none; }
+/* Center page title and "Wikipedia, the free encyclopedia" text */
+#firstHeading, #siteSub, #contentSub { text-align: center; margin-left: auto; margin-right: auto; }
+h1, h2, h3, h4, h5, h6 { border-bottom: none; }
 
-    @media screen and (min-width: 1200px) {
-        /* Navigation */
-        #mw-navigation #mw-head { width: 900px; left: calc(50% - 450px + 5.5em); }
-        #left-navigation { margin-left: 150px; }
+@media screen and (min-width: 1200px) {
+    /* Navigation */
+    #mw-navigation #mw-head { width: 900px; left: calc(50% - 450px + 5.5em); }
+    #left-navigation { margin-left: 150px; }
+    #coordinates { display: none; }
 
-        /* Indicators */
-        .mw-body .mw-indicators {
-            float: none; width: 600px; height: 0; margin: auto; display: flex; justify-content: flex-end;
-        }
-
-        /* Center article */
-        #mw-content-text { max-width: 600px; margin: auto; line-height: 1.73; }
-        .mw-body-content p { margin: 0.75em 0; }
-
-        /* Notes at top of page */
-        div.hatnote { font-size: 13px; width: 900px; font-style: normal; padding: 0; }
-
-        /* Floats */
-        div.tright, div.floatright { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
-        div.tleft { float: left; margin-right: -100%; transform: translateX(calc(-100% - 20px)); }
-
-        /* Handle stack-clear-right class */
-        div.stack-clear-right { float: right; margin-left: -100%; transform: translateX(calc(100% + 20px)); }
-        div.stack-clear-right div.tright { margin-left: 0; transform: none }
-
-        /* Treat some tables as .tright */
-        table.infobox, table.vertical-navbox { margin-left: -100% !important; transform: translateX(calc(100% + 20px)); }
-
-        /* ambox ("This article has problems" etc): no margin */
-        table.ambox { margin: 0; }
-        
-        /* Disable some borders? */
-        table.infobox, table.vertical-navbox, div.thumbinner { border: none !important; background: inherit !important; }
-        table.ambox { border-top: none; border-right: none; border-bottom: none; background: inherit !important; }
-        
-        /* Clean up vertical-navbox */
-        table.vertical-navbox div.mini ul { display: none; }
-        
-        #toc { box-sizing: border-box; border: none; padding: 20px 30px; width: 100%; }
-        #toc div.toctitle { text-align: start; }
-
-        /* Math */
-        /* This doesn't quite work. Distinguishing inline from display is hard... */
-        /* dl dd span.mwe-math-element:only-child { width: 100%; text-align: center; display: inline-block; } */
-
-        /* Allow navboxes and main page to be wider */
-        div.navbox, #mp-upper, #mp-lower, #mp-topbanner { width: 900px !important; margin-left: -150px !important; }
-        #catlinks { width: 900px; margin-left: auto; margin-right: auto; }
+    /* Indicators */
+    .mw-body .mw-indicators {
+        float: none; width: 600px; height: 0; margin: auto; display: flex; justify-content: flex-end;
     }
+
+    /* Center article */
+    #mw-content-text { max-width: 600px; margin: auto; line-height: 1.73; }
+    .mw-body-content p { margin: 0.75em 0; }
+
+    /* Notes at top of page */
+    div.hatnote { font-size: 13px; width: 900px; font-style: normal; padding: 0; }
+
+    /* Floats */
+    div.tright, div.floatright { float: right; margin-left: -100% !important; transform: translateX(calc(100% + 20px)); }
+    div.tleft { float: left; margin-right: -100% !important; transform: translateX(calc(-100% - 20px)); }
+
+    /* Handle stack-clear-right class */
+    div.stack-clear-right { float: right; margin-left: -100% !important; transform: translateX(calc(100% + 20px)); }
+    div.stack-clear-right div.tright { margin-left: 0 !important; transform: none }
+
+    /* Treat some tables as .tright */
+    table.infobox, table.vertical-navbox, table.floatright { margin-left: -100% !important; transform: translateX(calc(100% + 20px)); }
+
+    /* ambox ("This article has problems" etc): no margin */
+    table.ambox { margin: 0; }
+    
+    /* Disable some borders? */
+    table.infobox, table.vertical-navbox, div.thumbinner { border: none !important; background: inherit !important; }
+    table.ambox { border-top: none; border-right: none; border-bottom: none; background: inherit !important; }
+    
+    /* Clean up vertical-navbox */
+    table.vertical-navbox div.mini ul { display: none; }
+    
+    #toc { box-sizing: border-box; border: none; padding: 20px 30px; width: 100%; }
+    #toc div.toctitle { text-align: start; }
+
+    /* Math */
+    /* This doesn't quite work. Distinguishing inline from display is hard... */
+    /* dl dd span.mwe-math-element:only-child { width: 100%; text-align: center; display: inline-block; } */
+
+    /* Allow navboxes and main page to be wider */
+    div.navbox, #mp-upper, #mp-lower, #mp-topbanner { width: 900px !important; margin-left: -150px !important; }
+    #catlinks { width: 900px; margin-left: auto; margin-right: auto; }
 }
